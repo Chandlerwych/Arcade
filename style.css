@@ -1,0 +1,74 @@
+* {
+
+box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+}
+
+.board {
+
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.cell:first-child {
+    border-top: none;
+    border-left: none;
+}
+
+.cell:nth-child(2) {
+    border-top: none;
+}
+
+.cell:nth-child(3) {
+    border-top: none;
+    border-right: none;
+}
+
+.cell:nth-child(4) {
+   border-left: none;
+}
+
+/*THIS ONE IS CENTER LEAVE IT ALONE*/ 
+.cell:nth-child(5) {
+
+}
+
+
+.cell:nth-child(6) {
+    border-right: none;
+   
+}
+
+.cell:nth-child(7) {
+    border-left: none;
+    border-bottom: none;
+}
+
+.cell:nth-child(8) {
+  border-bottom: none;
+}
+
+
+.cell:nth-child(9) {
+   border-bottom: none;
+   border-right: none;
+}
+
+
