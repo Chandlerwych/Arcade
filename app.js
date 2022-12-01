@@ -1,70 +1,25 @@
-// const gameState = {
-//     players: ['x', 'o'],
-//     board: [
-//       [null, null, null],
-//       [null, null, null],
-//       [null, null, null]
-//     ]
-//   }
-  // WILL THIS LAYOUT FUNCTION INTERACT WITH MY DIV HTML BOARD????? HINT FROM WORKSHOP? WILL I BE ABLE TO DO A RESET FUNCTION TO RETURN THE GAME STATE TO THIS AFTER FIRST CLICK EVENT "GAMESTART?" COME BACK
+const gameState = {
+    players: ['x', 'o'],
+    board: [
+      [null, null, null],
+      [null, null, null],
+      [null, null, null]
+    ]
+  }
+  // WILL THIS LAYOUT INTERACT WITH MY DIV HTML BOARD????? HINT FROM WORKSHOP? WILL I BE ABLE TO DO A RESET FUNCTION TO RETURN THE GAME STATE TO THIS AFTER FIRST CLICK EVENT "GAMESTART?" COME BACK!!!!!!!!!!!
 
-  const cellBox = document.querySelectorAll('[data-cell]')
+  const gamebox = document.getElementsByClassName('game-box');
   
-  cellBox.forEach(cell => {
-    cell.addEventListener('Click', boxClick, {once: true})
+  gamebox.forEach(box=> {
+    box.addEventListener('Click', Handleclick, {once: true});
+    console.log(TEST)
   })
+//CHECK IF THESE ARE FIRING WHEN A BOX IS CLICKED THEN WE CAN MOVE ON WOOO!!!!!!!!!!!!!!!!!
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //======******======******======******======******======******======******\\//======******======******======******======******======******======******\\//======******======******======******======******======******======******\\//======******======******======******======******======******======******\\
-// YOU LEFT OFF DIRECTLY ABOVE => (PUT DETAILS HERE)
+//======******======******======******======******======******======******\\//======******======******======******======******======******======******\\//======******======******======******======******======******======******\\//======******======******======******======******======******======******\\
+// YOU LEFT OFF DIRECTLY ABOVE => (CHECK IF DIV BOXES ARE REGISTERING CLICK????? SHOULD WE MAKE X AND O IN CSS OR INSERT PNGS??????? PLAYER 1 & 2 BOXES NEED NAME BOXES. POSSIBLE FOR PLAYERS TO CHOOSE X OR O VS BEING AUTO ASSIGNED?????)
 //======******======******======******======******======******======******\\//======******======******======******======******======******======******\\//======******======******======******======******======******======******\\//======******======******======******======******======******======******\\
 // ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 // ▒▒▒▒▒▒▒▒▒▒░░░░░░░░█░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒
