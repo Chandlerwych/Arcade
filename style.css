@@ -1,98 +1,28 @@
-* {
-box-sizing: border-box;
+.cells {
+  width: 25vh;
+  height: 20vh;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  background-color: rgb(0, 0, 0);
 }
-
-head {
-    margin: 0;
-}
-/*ARE THEY IN THEIR OWN 'BOX' SO WE CAN MOVE THEM UNDER THE BOARD??? VERIFY THIS!!!!!!*/
-/*CHANGE COLORS AFTER VERIFICATION OF FUNCTIONALITY*/
-.button {
-box-sizing: border-box;
-display: flex;
-justify-content: center;
-align-items: center;
-border: 10px;
-background-color: red;
-}
-
-
 body {
-    margin: 0;
+  color: whitesmoke;
+  text-shadow: 2px 2px 2px rgb(2, 0, 0);
+  font-size: larger;
 }
 
-
-.board {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: repeat(3, auto);
+.gameboardContainer {
+  display: flex;
 }
 
-
-.box {
-
-    width: 100px;
-    height: 100px;
-    border: 1px solid rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-content: center;
+.button {
+  display: flex;
+  align-items: center;
 }
 
-
-.box:first-child {
-    border-top: none;
-    border-left: none;
+.gameboard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
 }
-
-
-.box:nth-child(2) {
-    border-top: none;
-}
-
-.box:nth-child(3) {
-    border-top: none;
-    border-right: none;
-}
-
-.box:nth-child(4) {
-   border-left: none;
-}
-
-/*NO NEED FOR DIV CHILD 5 ITS CENTER*/ 
-
-.box:nth-child(6) {
-    border-right: none;
-}
-
-.box:nth-child(7) {
-    border-left: none;
-    border-bottom: none;
-}
-
-.box:nth-child(8) {
-  border-bottom: none;
-}
-
-
-.box:nth-child(9) {
-   border-bottom: none;
-   border-right: none;
-}
-
-
-.x {
-height: 100px;
-width: 100px;
-background-color: rgb(0, 0, 0);
-border-bottom-left-radius: 500%;
-}
-
-/*SHOULD WE DO X AND O THIS WAY OR INSERT PNGS THROUGH HTML?????*/ 
-/*COPY AND PASTE ME*/
-
