@@ -1,3 +1,7 @@
+const gameboard = document.querySelector(".gameboard");
+const resetbutton = document.querySelector("#resetbutton");
+const playerName = document.querySelector("#playerName");
+
 let gameState = {
   players: ["X", "O"],
   playerName: ["X", "O"],
@@ -8,23 +12,6 @@ let gameState = {
   ],
   count: 0,
 };
-
-const gameboard = document.querySelector(".gameboard");
-const resetbutton = document.querySelector("#resetbutton");
-const playerName = document.querySelector("#playerName");
-
-function renderBoard() {
-  gameboard.innerHTML = "";
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 3; j++) {
-      const cell = document.createElement("div");
-      cell.classList.add("cells");
-      cell.setAttribute("id", `${i}${j}`);
-      gameboard.appendChild(cell);
-      console.log("board rendering");
-    }
-  }
-}
 
 function boardState() {
   gameState.board[0][0] = document.getElementById("00").innerHTML;
@@ -37,6 +24,19 @@ function boardState() {
   gameState.board[2][1] = document.getElementById("21").innerHTML;
   gameState.board[2][2] = document.getElementById("22").innerHTML;
   console.log(gameState.board);
+}
+
+function renderBoard() {
+  gameboard.innerHTML = "";
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      const cell = document.createElement("div");
+      cell.classList.add("cells");
+      cell.setAttribute("id", `${i}${j}`);
+      gameboard.appendChild(cell);
+      console.log("board rendering");
+    }
+  }
 }
 
 playerName.addEventListener("click", nameInput);
