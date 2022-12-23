@@ -9,7 +9,6 @@ let gameState = {
   count: 0,
 };
 
-// event.preventDefault()
 const gameboard = document.querySelector(".gameboard");
 const resetbutton = document.querySelector("#resetbutton");
 const playerName = document.querySelector("#playerName");
@@ -24,6 +23,45 @@ function renderBoard() {
       gameboard.appendChild(cell);
       console.log("board rendering");
     }
+  }
+}
+
+function boardState() {
+  gameState.board[0][0] = document.getElementById("00").innerHTML;
+  gameState.board[0][1] = document.getElementById("01").innerHTML;
+  gameState.board[0][2] = document.getElementById("02").innerHTML;
+  gameState.board[1][0] = document.getElementById("10").innerHTML;
+  gameState.board[1][1] = document.getElementById("11").innerHTML;
+  gameState.board[1][2] = document.getElementById("12").innerHTML;
+  gameState.board[2][0] = document.getElementById("20").innerHTML;
+  gameState.board[2][1] = document.getElementById("21").innerHTML;
+  gameState.board[2][2] = document.getElementById("22").innerHTML;
+  console.log(gameState.board);
+}
+
+playerName.addEventListener("click", nameInput);
+gameboard.addEventListener("click", (e) => {
+  if (!e.target.innerHTML) {
+    gameState.count % 2 === 0
+      ? (e.target.innerHTML = "X")
+      : (e.target.innerHTML = "O");
+    gameState.count++;
+    boardState();
+  }
+});
+
+function nameInput(event) {
+  if (event.target.className === "startbutton") {
+    const player1Name = document.querySelector("input[name = player1Name]");
+    const player2Name = document.querySelector("input[name = player2Name]");
+    gameState.playerName[0] = player1Name.value;
+    gameState.playerName[1] = player2Name.value;
+    console.log(gameState);
+    render();
+  } else if (event.target.className === "resetbutton") {
+    reset();
+    render();
+    console.log("name input working");
   }
 }
 
@@ -42,32 +80,6 @@ function playerNames() {
   `;
   }
 }
-
-function nameInput(event) {
-  if (event.target.className === "startbutton") {
-    const player1Name = document.querySelector("input[name = player1Name]");
-    const player2Name = document.querySelector("input[name = player2Name]");
-    gameState.playerName[0] = player1Name.value;
-    gameState.playerName[1] = player2Name.value;
-    console.log(gameState);
-    render();
-  } else if (event.target.className === "resetbutton") {
-    reset();
-    render();
-    console.log("hi");
-  }
-}
-
-playerName.addEventListener("click", nameInput);
-gameboard.addEventListener("click", (e) => {
-  if (!e.target.innerHTML) {
-    gameState.count % 2 === 0
-      ? (e.target.innerHTML = "X")
-      : (e.target.innerHTML = "O");
-    gameState.count++;
-    boardState();
-  }
-});
 
 function reset() {
   gameState = {
@@ -90,19 +102,6 @@ function reset() {
   document.getElementById("21").innerHTML = "";
   document.getElementById("22").innerHTML = "";
   console.log("reset working");
-}
-
-function boardState() {
-  gameState.board[0][0] = document.getElementById("00").innerHTML;
-  gameState.board[0][1] = document.getElementById("01").innerHTML;
-  gameState.board[0][2] = document.getElementById("02").innerHTML;
-  gameState.board[1][0] = document.getElementById("10").innerHTML;
-  gameState.board[1][1] = document.getElementById("11").innerHTML;
-  gameState.board[1][2] = document.getElementById("12").innerHTML;
-  gameState.board[2][0] = document.getElementById("20").innerHTML;
-  gameState.board[2][1] = document.getElementById("21").innerHTML;
-  gameState.board[2][2] = document.getElementById("22").innerHTML;
-  console.log(gameState.board);
 }
 
 function render() {
